@@ -11,29 +11,28 @@
   - If a plane takes off, its "isFlying" property is true.
   - If a plane lands, its "isFlying" property is false.
 
-  SOLUTION CODE:
+  SOLUTION CODE:*/
 
-  function Airplane(name) {
-    this.name = name;
-    this.isFlying = false;
-  }
-  Airplane.prototype.takeOff = function () {
-    this.isFlying = true;
-  }
-  Airplane.prototype.land = function () {
-    this.isFlying = false;
-  }
+function Airplane(name) {
+  this.name = name;
+  this.isFlying = false;
+}
+Airplane.prototype.takeOff = function() {
+  this.isFlying = true;
+};
+Airplane.prototype.land = function() {
+  this.isFlying = false;
+};
 
-  HOW TO TEST OUR SOLUTION:
+// HOW TO TEST OUR SOLUTION:
 
-  const jumbo = new Airplane('Jumbo');
-  console.log(jumbo.name)              // 'Jumbo'
-  console.log(jumbo.isFlying)          // false
-  jumbo.takeOff();
-  console.log(jumbo.isFlying)          // true
-  jumbo.land();
-  console.log(jumbo.isFlying)          // false
-*/
+const jumbo = new Airplane("Jumbo");
+console.log(jumbo.name); // 'Jumbo'
+console.log(jumbo.isFlying); // false
+jumbo.takeOff();
+console.log(jumbo.isFlying); // true
+jumbo.land();
+console.log(jumbo.isFlying); // false
 
 /*
 
@@ -45,31 +44,44 @@
   - When eating an edible, it should be pushed into a "stomach" property which is an array.
   - Give persons the ability to poop.
   - When pooping, the stomach should empty.
+  */
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+Person.prototype.greet = function() {
+  console.log(`Hi my name is ${this.name} and I am ${this.age} years`);
+};
 
-  TASK 2
+Person.prototype.eat = function(food) {
+  console.log(`Hi my name is ${this.name} I will like to have ${food}`);
+};
 
-  - Build a Car constructor that takes model name and make.
-  - Give cars the ability to drive a distance.
-  - By driving a car, the distance driven should be added to an "odometer" property.
-  - Give cars the ability to crash.
-  - A crashed car can't be driven any more. Attempts return a string "I crashed at x miles!", x being the miles in the odometer.
-  - Give cars the ability to be repaired.
-  - A repaired car can be driven again.
+var somebody = new Person("Tola", 70);
+somebody.greet();
+somebody.eat("Rice");
+// TASK 2
 
-  TASK 3
+// - Build a Car constructor that takes model name and make.
+// - Give cars the ability to drive a distance.
+// - By driving a car, the distance driven should be added to an "odometer" property.
+// - Give cars the ability to crash.
+// - A crashed car can't be driven any more. Attempts return a string "I crashed at x miles!", x being the miles in the odometer.
+// - Give cars the ability to be repaired.
+// - A repaired car can be driven again.
 
-  - Build a Baby constructor that subclasses the Person built earlier.
-  - Babies of course inherit the ability to greet, which can be strange.
-  - Babies should have the ability to play, which persons don't.
-  - By playing, a string is returned with some text of your choosing.
+// TASK 3
 
-  TASK 4
+// - Build a Baby constructor that subclasses the Person built earlier.
+// - Babies of course inherit the ability to greet, which can be strange.
+// - Babies should have the ability to play, which persons don't.
+// - By playing, a string is returned with some text of your choosing.
 
-  Use your imagination and come up with constructors that allow to build objects
-  With amazing and original capabilities. Build 3 small ones, or a very
-  complicated one with lots of state. Surprise us!
+// TASK 4
 
-*/
+// Use your imagination and come up with constructors that allow to build objects
+// With amazing and original capabilities. Build 3 small ones, or a very
+// complicated one with lots of state. Surprise us!
 
 /*
 
@@ -108,10 +120,10 @@
 */
 
 /*
-  * Inheritance chain: GameObject -> CharacterStats -> Humanoid
-  * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
-  * Instances of CharacterStats should have all of the same properties as GameObject.
-*/
+ * Inheritance chain: GameObject -> CharacterStats -> Humanoid
+ * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
+ * Instances of CharacterStats should have all of the same properties as GameObject.
+ */
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
