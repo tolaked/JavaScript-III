@@ -45,21 +45,29 @@ console.log(jumbo.isFlying); // false
   - Give persons the ability to poop.
   - When pooping, the stomach should empty.
   */
-function Person(name, age) {
+function Person(name, age, stomach) {
   this.name = name;
   this.age = age;
+  this.stomach = stomach;
 }
 Person.prototype.greet = function() {
   console.log(`Hi my name is ${this.name} and I am ${this.age} years`);
 };
 
 Person.prototype.eat = function(food) {
+  this.stomach = food;
+  console.log("I have " + this.stomach);
   console.log(`Hi my name is ${this.name} I will like to have ${food}`);
+};
+
+Person.prototype.poop = function(stomach, food) {
+  this.stomach = [];
 };
 
 var somebody = new Person("Tola", 70);
 somebody.greet();
 somebody.eat("Rice");
+somebody.poop([]);
 // TASK 2
 
 // - Build a Car constructor that takes model name and make.
@@ -69,6 +77,31 @@ somebody.eat("Rice");
 // - A crashed car can't be driven any more. Attempts return a string "I crashed at x miles!", x being the miles in the odometer.
 // - Give cars the ability to be repaired.
 // - A repaired car can be driven again.
+
+function Car(model, name, make, odometer) {
+  this.model = model;
+  this.name = name;
+  this.make = make;
+  this.odometer = 60;
+}
+
+Car.prototype.drive = function(distance) {
+  canDrive = true;
+  this.odometer += distance;
+  console.log(this.odometer);
+};
+Car.prototype.crash = function(isCrashed) {
+  isCrashed = false;
+  if (isCrashed) {
+    console.log(`I crashed at ${this.odometer}miles`);
+  } else {
+    console.log("You can drive");
+  }
+};
+
+var Toyota = new Car("2016", "Toyo", "Avalon");
+Toyota.drive(20);
+Toyota.crash();
 
 // TASK 3
 
