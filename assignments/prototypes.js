@@ -141,6 +141,19 @@ snape.play = "kiriikri";
 // With amazing and original capabilities. Build 3 small ones, or a very
 // complicated one with lots of state. Surprise us!
 
+function Human(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+Human.prototype.getDetails = function() {
+  console.log(`My name is ${this.firstName} ${this.lastName}`);
+};
+// Create a Person object
+var myFather = new Human("Bale", "Tommy", 50, "blue");
+myFather.getDetails();
 /*
 
   STRETCH TASK
