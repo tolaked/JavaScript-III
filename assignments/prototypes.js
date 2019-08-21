@@ -88,10 +88,10 @@ function Car(model, name, make, odometer) {
 Car.prototype.drive = function(distance) {
   canDrive = true;
   this.odometer += distance;
-  console.log(this.odometer);
+  console.log(`I have gone ${this.odometer}miles`);
 };
 Car.prototype.crash = function(isCrashed) {
-  isCrashed = false;
+  isCrashed = true;
   if (isCrashed) {
     console.log(`I crashed at ${this.odometer}miles`);
   } else {
@@ -99,9 +99,19 @@ Car.prototype.crash = function(isCrashed) {
   }
 };
 
+Car.prototype.repaired = function(isRepaired) {
+  isRepaired = true;
+  if (isRepaired) {
+    console.log(`Repaired, you can drive`);
+  } else {
+    console.log("Faulty!!!");
+  }
+};
+
 var Toyota = new Car("2016", "Toyo", "Avalon");
 Toyota.drive(20);
 Toyota.crash();
+Toyota.repaired();
 
 // TASK 3
 
@@ -109,6 +119,21 @@ Toyota.crash();
 // - Babies of course inherit the ability to greet, which can be strange.
 // - Babies should have the ability to play, which persons don't.
 // - By playing, a string is returned with some text of your choosing.
+
+class Baby extends Person {
+  constructor(name, age, play) {
+    super(name, age);
+    this._play = play;
+  }
+  set play(playing) {
+    this._play = playing;
+    console.log(playing);
+  }
+}
+
+let snape = new Baby("Severus", 1);
+snape.greet();
+snape.play = "kiriikri";
 
 // TASK 4
 
